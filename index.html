@@ -51,7 +51,7 @@
         "name": "Denver Tailor",
         "description": "Denver Tailor offers professional tailoring and alterations with fully transparent pricing and clear communication on timing. We serve Denver and the greater metro area with honest, high-quality garment work — no guessing, no surprises.",
         "url": "https://thedenvertailor.com",
-        "telephone": "[PLACEHOLDER]",
+        "telephone": "+17205153564",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Denver",
@@ -401,10 +401,12 @@
       margin-bottom: 44px;
     }
 
-    /* [PLACEHOLDER — Replace with a high-quality photo: tailor at work, a finished garment, or your shop interior] */
     .hero__image {
       width: 100%;
       aspect-ratio: 3 / 2;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
     }
 
     /* ============================================================
@@ -490,17 +492,18 @@
     .service-card {
       background-color: var(--color-white);
       border-radius: 8px;
-      overflow: hidden;
-    }
-
-    /* [PLACEHOLDER — Replace each .service-card__image with a real photo of that service] */
-    .service-card__image {
-      width: 100%;
-      aspect-ratio: 16 / 9;
     }
 
     .service-card__body {
       padding: 28px 28px 32px;
+    }
+
+    .service-card__icon {
+      margin-bottom: 20px;
+    }
+
+    .service-card__icon svg {
+      display: block;
     }
 
     .service-card__name {
@@ -769,10 +772,6 @@
            referrerpolicy="no-referrer-when-downgrade">
          </iframe>
     ] */
-    .area__map {
-      width: 100%;
-      height: 320px;
-    }
 
     /* ============================================================
        CONTACT / QUOTE FORM
@@ -874,6 +873,21 @@
 
     .contact__submit .btn {
       width: 100%;
+    }
+
+    .contact__success {
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      color: var(--color-dark);
+      background-color: var(--color-white);
+      border-left: 3px solid var(--color-accent);
+      padding: 16px 20px;
+      border-radius: 0 6px 6px 0;
+      display: none;
+    }
+
+    .contact__success.is-visible {
+      display: block;
     }
 
     .contact__phone-note {
@@ -1108,10 +1122,12 @@
         <a href="#contact" class="btn btn--primary">Get a Quote</a>
       </div>
 
-      <!-- [PLACEHOLDER — Replace with a high-quality photo of the shop, a garment, or a fitting in progress. Recommended: 3:2 or 16:9 ratio, well-lit, editorial feel] -->
-      <div class="hero__image img-placeholder img-placeholder--dark">
-        <span class="placeholder-label">Your Photo Here</span>
-      </div>
+      <img
+        src="imgs/denver-tailor-hero.jpg"
+        alt="Denver Tailor — tailoring and alterations in Denver, CO"
+        class="hero__image"
+        loading="eager"
+      >
 
     </div>
   </section>
@@ -1162,66 +1178,97 @@
       <div class="services__grid">
 
         <div class="service-card">
-          <!-- [PLACEHOLDER — Replace with a photo of suit/jacket work. Suggested: close-up of a jacket shoulder seam or sleeve button detail] -->
-          <div class="service-card__image img-placeholder img-placeholder--dark">
-            <span class="placeholder-label">Photo Here</span>
-          </div>
           <div class="service-card__body">
+            <div class="service-card__icon" aria-hidden="true">
+              <!-- Jacket: lapels + body outline -->
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 6 L8 40 L36 40 L34 6" stroke="#C1613A" stroke-width="1.75" stroke-linejoin="round"/>
+                <path d="M10 6 C14 9 19 15 22 22" stroke="#C1613A" stroke-width="1.75" stroke-linecap="round"/>
+                <path d="M34 6 C30 9 25 15 22 22" stroke="#C1613A" stroke-width="1.75" stroke-linecap="round"/>
+                <line x1="22" y1="22" x2="22" y2="40" stroke="#C1613A" stroke-width="1.75" stroke-linecap="round"/>
+                <path d="M13 30 L13 36 L19 36 L19 30" stroke="#C1613A" stroke-width="1.25" stroke-linejoin="round"/>
+              </svg>
+            </div>
             <h3 class="service-card__name">Suit &amp; Jacket Alterations</h3>
             <p class="service-card__desc">The difference between a suit that looks bought off a rack and one that looks like it was made for you usually comes down to three or four measurements. We take in the sides, adjust the shoulder, shorten sleeves, and install functional buttonholes — bringing your wardrobe from off-the-rack to fitted right here in Denver.</p>
           </div>
         </div>
 
         <div class="service-card">
-          <!-- [PLACEHOLDER — Replace with a photo of pants/hem work. Suggested: a pair of trousers being pinned or a finished hem detail] -->
-          <div class="service-card__image img-placeholder img-placeholder--dark">
-            <span class="placeholder-label">Photo Here</span>
-          </div>
           <div class="service-card__body">
+            <div class="service-card__icon" aria-hidden="true">
+              <!-- Pants: waistband + two legs -->
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="9" y="7" width="26" height="6" rx="1.5" stroke="#C1613A" stroke-width="1.75"/>
+                <path d="M9 13 L8 40 L22 40 L22 13" stroke="#C1613A" stroke-width="1.75" stroke-linejoin="round"/>
+                <path d="M22 13 L22 40 L36 40 L35 13" stroke="#C1613A" stroke-width="1.75" stroke-linejoin="round"/>
+              </svg>
+            </div>
             <h3 class="service-card__name">Pants Alterations &amp; Hemming</h3>
             <p class="service-card__desc">Hemming, tapering, waist adjustments, crotch and seat work — we do the full range of trouser alterations. Whether you're breaking in a new pair of dress pants or just need a cleaner hem on your jeans, we'll tell you exactly what it costs and when it's ready.</p>
           </div>
         </div>
 
         <div class="service-card">
-          <!-- [PLACEHOLDER — Replace with a photo of shirt/vest work. Suggested: a shirt being taken in at the side seam] -->
-          <div class="service-card__image img-placeholder img-placeholder--dark">
-            <span class="placeholder-label">Photo Here</span>
-          </div>
           <div class="service-card__body">
+            <div class="service-card__icon" aria-hidden="true">
+              <!-- Shirt: collar spread + body + placket -->
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 8 L14 18 L14 40 L30 40 L30 18 L36 8" stroke="#C1613A" stroke-width="1.75" stroke-linejoin="round"/>
+                <path d="M8 8 L18 12 L22 20" stroke="#C1613A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M36 8 L26 12 L22 20" stroke="#C1613A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="22" y1="20" x2="22" y2="40" stroke="#C1613A" stroke-width="1.75" stroke-linecap="round"/>
+              </svg>
+            </div>
             <h3 class="service-card__name">Shirt &amp; Vest Alterations</h3>
             <p class="service-card__desc">A shirt that fits through the shoulders but bags at the waist — or fits the body and pulls at the chest — is a shirt that needs work. We take in the sides, taper and shorten sleeves, and replace buttons. These small changes make a noticeable difference in how your whole wardrobe reads.</p>
           </div>
         </div>
 
         <div class="service-card">
-          <!-- [PLACEHOLDER — Replace with a photo of formal/dress wear. Suggested: a tuxedo jacket on a hanger, or formal trousers being pinned] -->
-          <div class="service-card__image img-placeholder img-placeholder--dark">
-            <span class="placeholder-label">Photo Here</span>
-          </div>
           <div class="service-card__body">
+            <div class="service-card__icon" aria-hidden="true">
+              <!-- Bow tie: two wing triangles + center knot -->
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 22 L19 14 L19 30 Z" stroke="#C1613A" stroke-width="1.75" stroke-linejoin="round"/>
+                <path d="M40 22 L25 14 L25 30 Z" stroke="#C1613A" stroke-width="1.75" stroke-linejoin="round"/>
+                <rect x="19" y="18" width="6" height="8" rx="1" stroke="#C1613A" stroke-width="1.75"/>
+              </svg>
+            </div>
             <h3 class="service-card__name">Formal &amp; Dress Wear</h3>
             <p class="service-card__desc">Weddings, galas, graduations — occasions where the fit actually matters. We work on tuxedos, blazers, dress shirts, and formal trousers. If you have an event coming up in Denver, tell us the date when you reach out. We'll be straight with you about whether we can turn it in time.</p>
           </div>
         </div>
 
         <div class="service-card">
-          <!-- [PLACEHOLDER — Replace with a photo of denim/casual wear. Suggested: a pair of jeans being hemmed or a casual jacket on the table] -->
-          <div class="service-card__image img-placeholder img-placeholder--dark">
-            <span class="placeholder-label">Photo Here</span>
-          </div>
           <div class="service-card__body">
+            <div class="service-card__icon" aria-hidden="true">
+              <!-- Jeans: waistband with rivets + belt loops + two legs -->
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="9" y="7" width="26" height="7" rx="1.5" stroke="#C1613A" stroke-width="1.75"/>
+                <line x1="16" y1="7" x2="16" y2="4" stroke="#C1613A" stroke-width="1.75" stroke-linecap="round"/>
+                <line x1="28" y1="7" x2="28" y2="4" stroke="#C1613A" stroke-width="1.75" stroke-linecap="round"/>
+                <path d="M9 14 L8 40 L22 40 L22 14" stroke="#C1613A" stroke-width="1.75" stroke-linejoin="round"/>
+                <path d="M22 14 L22 40 L36 40 L35 14" stroke="#C1613A" stroke-width="1.75" stroke-linejoin="round"/>
+                <path d="M10 17 L18 20" stroke="#C1613A" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+              </svg>
+            </div>
             <h3 class="service-card__name">Denim &amp; Casual Wear</h3>
             <p class="service-card__desc">Your everyday wardrobe deserves to fit as well as your dress clothes. We hem and taper denim, take in casual jackets, and adjust the pieces you actually reach for every day. Plenty of our regulars across the Denver metro come in for nothing more exotic than a perfect-length hem on their favorite jeans.</p>
           </div>
         </div>
 
         <div class="service-card">
-          <!-- [PLACEHOLDER — Replace with a photo of repair work. Suggested: close-up of stitching or a repaired seam] -->
-          <div class="service-card__image img-placeholder img-placeholder--dark">
-            <span class="placeholder-label">Photo Here</span>
-          </div>
           <div class="service-card__body">
+            <div class="service-card__icon" aria-hidden="true">
+              <!-- Needle and thread -->
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 6 L38 12 L16 34 L10 34 L10 28 Z" stroke="#C1613A" stroke-width="1.75" stroke-linejoin="round"/>
+                <line x1="35" y1="9" x2="38" y2="6" stroke="#C1613A" stroke-width="1.75" stroke-linecap="round"/>
+                <path d="M28 10 L34 16" stroke="#C1613A" stroke-width="1.75" stroke-linecap="round"/>
+                <path d="M8 36 C6 40 4 42 10 40 C16 38 14 36 10 34" stroke="#C1613A" stroke-width="1.75" stroke-linecap="round" fill="none"/>
+              </svg>
+            </div>
             <h3 class="service-card__name">Repairs &amp; Finishing</h3>
             <p class="service-card__desc">Ripped seams, blown-out seats, missing buttons, frayed cuffs — these don't always mean it's time to replace a garment. If something you own is well-made and worth saving, we'll tell you honestly whether a repair makes sense and what it'll cost before we ever pick up a needle.</p>
           </div>
@@ -1558,20 +1605,6 @@
         <span class="area__tag">Central Park</span>
       </div>
 
-      <!-- [PLACEHOLDER — Replace this div with your Google Maps iframe embed:
-           <iframe
-             src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE_HERE"
-             width="100%" height="320"
-             style="border:0; border-radius:8px; display:block;"
-             allowfullscreen="" loading="lazy"
-             referrerpolicy="no-referrer-when-downgrade"
-             title="Denver Tailor location map">
-           </iframe>
-      ] -->
-      <div class="area__map img-placeholder">
-        <span class="placeholder-label">Map Embed Here</span>
-      </div>
-
     </div>
   </section>
 
@@ -1587,12 +1620,13 @@
           <p class="contact__subhead">Tell us what you need. We'll get back to you promptly with details and pricing.</p>
         </div>
 
-        <!-- [PLACEHOLDER — Connect this form before launch:
-             Formspree:     <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-             Netlify Forms: <form name="quote" method="POST" data-netlify="true">
-             Other:         Replace with your preferred form handler
-        ] -->
-        <form class="contact__form" id="quote-form" novalidate>
+        <form
+          class="contact__form"
+          id="quote-form"
+          action="https://formspree.io/brett@bespokeedge.com"
+          method="POST"
+          novalidate
+        >
 
           <div class="form-row">
             <div class="form-group">
@@ -1609,7 +1643,7 @@
             <div class="form-group">
               <!-- [PLACEHOLDER — Replace the placeholder text with your Google Voice or business phone number for call tracking] -->
               <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone" placeholder="[PHONE PLACEHOLDER]" autocomplete="tel">
+              <input type="tel" id="phone" name="phone" placeholder="(720) 515-3564" autocomplete="tel">
             </div>
             <div class="form-group">
               <label for="service">Service Needed</label>
@@ -1635,13 +1669,16 @@
             ></textarea>
           </div>
 
+          <input type="hidden" name="_subject" value="New Inquiry — The Denver Tailor">
+
           <div class="contact__submit">
-            <button type="submit" class="btn btn--primary">Send My Request</button>
+            <button type="submit" class="btn btn--primary" id="quote-submit">Send My Request</button>
           </div>
 
-          <!-- [PLACEHOLDER — Replace [PHONE PLACEHOLDER] with your business phone number] -->
+          <div class="contact__success" id="quote-success" aria-live="polite"></div>
+
           <p class="contact__phone-note">
-            Prefer to call? <a href="tel:[PHONE PLACEHOLDER]">[PHONE PLACEHOLDER]</a> — we're happy to talk through what you need.
+            Prefer to call? <a href="tel:+17205153564">(720) 515-3564</a> — we're happy to talk through what you need.
           </p>
 
         </form>
@@ -1664,9 +1701,9 @@
 
       <div>
         <p class="footer__contact-label">Contact</p>
-        <!-- [PLACEHOLDER — Replace [PHONE] and [EMAIL] with your actual contact details] -->
+        <!-- [PLACEHOLDER — Replace [EMAIL] with your email address] -->
         <div class="footer__contact-info">
-          <p><a href="tel:[PHONE]">[PHONE]</a></p>
+          <p><a href="tel:+17205153564">(720) 515-3564</a></p>
           <p><a href="mailto:[EMAIL]">[EMAIL]</a></p>
           <p>Denver, CO</p>
         </div>
@@ -1719,6 +1756,45 @@
             item.classList.add('is-open');
             trigger.setAttribute('aria-expanded', 'true');
           }
+        });
+      });
+    })();
+
+    // Quote form — submits to Formspree via fetch, shows inline confirmation
+    (function () {
+      var form    = document.getElementById('quote-form');
+      var submit  = document.getElementById('quote-submit');
+      var success = document.getElementById('quote-success');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        submit.disabled = true;
+        submit.textContent = 'Sending…';
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        })
+        .then(function (res) {
+          if (res.ok) {
+            form.reset();
+            success.textContent = 'Got it — we\'ll be in touch shortly with details and pricing.';
+            success.classList.add('is-visible');
+            submit.style.display = 'none';
+          } else {
+            submit.disabled = false;
+            submit.textContent = 'Send My Request';
+            success.textContent = 'Something went wrong. Please try again or call us directly.';
+            success.classList.add('is-visible');
+          }
+        })
+        .catch(function () {
+          submit.disabled = false;
+          submit.textContent = 'Send My Request';
+          success.textContent = 'Something went wrong. Please try again or call us directly.';
+          success.classList.add('is-visible');
         });
       });
     })();
